@@ -1,4 +1,3 @@
-
 using System;
 
 public class Solution
@@ -8,9 +7,9 @@ public class Solution
         Trie trie = new Trie();
         foreach (string word in bannedWords)
         {
-            trie.addBannedWord(word);
+            trie.AddBannedWord(word);
         }
-        trie.extractAndAddAllWordsFromMixedStream(paragraph);
+        trie.ExtractAndAddAllWordsFromMixedStream(paragraph);
         return trie.nonBannedWordWithMaxFrequency;
     }
 }
@@ -30,7 +29,7 @@ class Trie
     private int maxFrequencyNonBannedWord;
     public String? nonBannedWordWithMaxFrequency;
 
-    public void addBannedWord(String word)
+    public void AddBannedWord(String word)
     {
         TrieNode node = root;
         foreach (char currentChar in word)
@@ -45,7 +44,7 @@ class Trie
         node.isBanned = true;
     }
 
-    public void extractAndAddAllWordsFromMixedStream(String stream)
+    public void ExtractAndAddAllWordsFromMixedStream(String stream)
     {
         int index = 0;
 
